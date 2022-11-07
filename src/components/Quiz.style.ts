@@ -45,11 +45,17 @@ export default makeStyles(() => ({
 		fontSize: '18px !important',
 		lineHeight: '27px !important',
 		color: '#FFFFFF !important',
-		backgroundColor: '#F9A826 !important',
+		backgroundColor: '#DD5790 !important',
 		width: '116px !important',
 		height: '56px',
 		float: 'right',
 		marginTop: '42px !important',
+		'&:hover': {
+			backgroundColor: '#FFFFFF !important',
+			border: '1px solid #DD5790 !important',
+			color: '#DD5790 !important',
+			fontWeight: '600 !important',
+		},
 	},
 	option: {
 		width: '416px',
@@ -65,7 +71,7 @@ export default makeStyles(() => ({
 		whiteSpace: 'nowrap',
 		overflow: 'hidden',
 		'&:hover': {
-			backgroundColor: '#F9A826',
+			backgroundColor: '#DD5790',
 			color: 'white !important',
 			border: 'none !important',
 		},
@@ -82,7 +88,7 @@ export default makeStyles(() => ({
 		border: 'none !important',
 	},
 	optionSelected: {
-		backgroundColor: '#F9A826',
+		backgroundColor: '#DD5790',
 		color: 'white !important',
 		border: 'none !important',
 	},
@@ -113,6 +119,10 @@ export default makeStyles(() => ({
 		borderRadius: '12px !important',
 		fontWeight: '600  !important',
 		fontSize: '18px !important',
+		'&:hover': {
+			border: ' 2px solid #DD5790!important',
+			color: ' #DD5790 !important',
+		},
 	},
 	resultText: {
 		fontWeight: '400 !important',
@@ -123,5 +133,21 @@ export default makeStyles(() => ({
 		color: 'green !important',
 		fontWeight: '700 !important',
 		fontSize: '21px !important',
+	},
+	brainLogo: {
+		height: '145px !important',
+		right: '0px !important',
+	},
+	intialText: {
+		textAlign: 'center',
+		fontSize: '32px !important',
+		marginTop: ' 123px !important',
+	},
+	playBtn: {
+		marginTop: ' 80px !important',
+		'&:hover': {
+			border: ' 2px solid #DD5790!important',
+			color: ' #DD5790 !important',
+		},
 	},
 }));

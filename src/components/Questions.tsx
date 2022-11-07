@@ -13,7 +13,6 @@ const Questions: React.FC<any> = () => {
 	const [selected, setSelected] = React.useState<any>('');
 	const [options, setOptions] = React.useState<any>([]);
 	const [optionColor, setOptoionColor] = React.useState<any>('orange');
-	const [goNext, setGoNext] = React.useState<boolean>(false);
 	const [count, setCount] = React.useState<any>(1);
 	const [trueAnswer, isTrueAnswer] = React.useState<any>(1);
 	const classes = QuizStyle();
@@ -25,7 +24,7 @@ const Questions: React.FC<any> = () => {
 		return shuffled.slice(0, num);
 	}
 
-	React.useEffect(() => {
+	const getQuestion = () => {
 		axios
 			.get('https://restcountries.com/v2/all')
 			.then(({ data }) => {
@@ -43,7 +42,11 @@ const Questions: React.FC<any> = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [goNext]);
+	};
+
+	React.useEffect(() => {
+		getQuestion();
+	}, []);
 
 	const updateSelected = (data: any) => {
 		setSelected(data);
@@ -53,7 +56,6 @@ const Questions: React.FC<any> = () => {
 		if (count === 5) {
 			navigate('/result');
 		} else {
-			setGoNext(false);
 			setOptoionColor('orange');
 			if (selected === answer) {
 				setOptoionColor('green');
@@ -63,7 +65,7 @@ const Questions: React.FC<any> = () => {
 				setOptoionColor('red');
 			}
 			setTimeout(() => {
-				setGoNext(true);
+				getQuestion();
 				setOptoionColor('orange');
 				setCount(count + 1);
 			}, 1000);

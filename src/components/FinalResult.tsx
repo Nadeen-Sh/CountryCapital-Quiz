@@ -28,7 +28,7 @@ const FinalResult: React.FC<any> = () => {
 						className={clsx(classes.againBtn, classes.resultTitle)}
 						onClick={() => {
 							localStorage.removeItem('result');
-							navigate('/');
+							navigate('/quiz');
 						}}>
 						Try again
 					</Button>
